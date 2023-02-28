@@ -1,0 +1,21 @@
+
+ 
+ 
+ 
+ 
+ 1.(for web.xml) Project right -> click Java EE Tolls -> Generate Deploment Descriptor stub
+    Run As  :--- Maven clean
+ 2.                Maven Install
+ 
+ 
+ After Maven Install will genere one .war file 
+ C:\Users\hp\Desktop\maven\02-SpringMVC\target\02-SpringMVC-0.0.1-SNAPSHOT.war
+ 
+ Inside server.xml file changes :
+ <Context docBase="C:\Users\hp\Desktop\maven\02-SpringMVC\target\02-SpringMVC-0.0.1-SNAPSHOT" path="/SpringMVC-JDBCTemplate-Annotations" reloadable="true" /></Host>
+ 
+ if any problem change docu type   : spring_mvc_servlet.xml
+ <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
