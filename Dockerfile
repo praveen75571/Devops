@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
-FROM ubuntu:18.04
-COPY . /app
-RUN make /app
-CMD python /app/app.py
+FROM openjdk:8
+EXPOSE 8080
+ADD target/02-SpringMVC-0.0.1-SNAPSHOT.war 02-SpringMVC-0.0.1-SNAPSHOT.war
+ENTRYPOINT ["java","-jar","/02-SpringMVC-0.0.1-SNAPSHOT.war"
 
 #FROM Tomcat:8
 #ADD http://localhost:/artifactory/libs-snapshot-local/BeverageStore.war /usr/local/tomcat/webapps/
