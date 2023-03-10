@@ -21,5 +21,5 @@ COPY /target/02-SpringMVC-0.0.1-SNAPSHOT.war .
 EXPOSE 8080
 
 # Set the command to run when the container starts
-CMD ["java", "-jar", "02-SpringMVC-0.0.1-SNAPSHOT.war"]
+CMD ["java", "-jar", "02-SpringMVC-0.0.1-SNAPSHOT.war", "com.mycompany.MyMainClass"]
 
