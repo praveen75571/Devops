@@ -15,7 +15,7 @@ FROM openjdk:8-jdk-alpine
 WORKDIR /app
 
 # Copy the .war file to the container
-COPY 02-SpringMVC-0.0.1-SNAPSHOT.war .
+COPY /target/02-SpringMVC-0.0.1-SNAPSHOT.war .
 
 # Expose the port that the application listens on
 EXPOSE 8080
