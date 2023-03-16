@@ -15,6 +15,11 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+        stage('Run in background') {
+    steps {
+        bat 'start /b java -jar myapp.jar > output.log 2>&1'
+    }
+}
         stage("Deploy to Tomcat") {
             steps {
                 sh "cp target/*.war /C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps"
