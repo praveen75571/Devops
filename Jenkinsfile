@@ -12,16 +12,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                maven {
-                    name: 'Maven',
-                    pom: 'pom.xml',
-                    goals: 'clean install',
-                    usePrivateRepository: false,
-                    //properties: [
-                      //  'username': 'myusername',
-                        //'password': 'mypassword'
-                    //]
-                }
+                withMaven(
+                    maven: 'maven-3.8.1',
+                    mavenSettingsConfig: 'my-settings.xml',
+                    // Set any additional Maven options
+                    mavenOpts: '-Xmx1G'
+                )
             }
         }
         stage('Test') {
