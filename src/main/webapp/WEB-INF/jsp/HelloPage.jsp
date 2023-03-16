@@ -14,7 +14,7 @@
   text-align: top;
   background: #1abc9c;
   color: white;
-  font-size: 30px;">Hello World</h1>
+  font-size: 40px;">Hello World</h1>
 </div>
 <input type="button" value="Submit" onclick="yourFunction();" style=" color:blackposition: fixed; right: 50%; "/>
 </body>
