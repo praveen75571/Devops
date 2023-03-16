@@ -12,12 +12,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withMaven(
                     maven: 'maven-3.8.1',
                     mavenSettingsConfig: 'my-settings.xml',
                     // Set any additional Maven options
                     mavenOpts: '-Xmx1G'
-                )
             }
         }
 
