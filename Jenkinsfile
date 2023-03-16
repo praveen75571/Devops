@@ -10,14 +10,6 @@ pipeline {
                 git url: "https://github.com/balareddy2013/DevOps.git"
             }
         }
-        stage('Build') {
-            steps {
-                withMaven(maven: 'maven-3.8.1') {
-                    sh 'mvn clean install'
-                }
-            }
-        }
-
         stage("Deploy to Tomcat") {
             steps {
                 sh "cp target/*.war /C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps"
