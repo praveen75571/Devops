@@ -11,7 +11,7 @@
    Welcome ${name }
    <div class="header">
   <h1 style= "padding: 69px;
-  text-align: center;
+  text-align: bottom;
   background: #1abc9c;
   color: white;
   font-size: 30px;">Hello World</h1>
