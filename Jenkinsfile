@@ -1,26 +1,26 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_REGISTRY = "docker.io"
-        DOCKER_REPO = "springmvc"
+	
+    tools {
+        maven 'Maven'
+        jdk 'JAVA'
     }
+
+    environment {
+        MVN_HOME = tool 'Maven'
+        JAVA_HOME = tool 'JAVA'
+    }
+
     stages {
         stage("Checkout") {
             steps {
                 git url: "https://github.com/balareddy2013/DevOps.git"
             }
         }
-        stage("Deploy to Tomcat") {
+
+        stage('Build') {
             steps {
-                sh "cp target/*.war /C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps"
-                sh "/path/to/tomcat/bin/startup.sh"
-            }
-        }
-        stage("Build and Push Docker Image") {
-            steps {
-                sh "docker build -t $DOCKER_REGISTRY/$DOCKER_REPO:latest ."
-                sh "docker login -u reddybalu2013 -p Balu@1992 $DOCKER_REGISTRY"
-                sh "docker push $DOCKER_REGISTRY/$DOCKER_REPO:latest"
+                sh "${MVN_HOME}/bin/mvn clean install"
             }
         }
     }
