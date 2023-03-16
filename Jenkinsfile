@@ -10,16 +10,34 @@ pipeline {
                 git url: "https://github.com/balareddy2013/DevOps.git"
             }
         }
-        stage("Build and Scan") {
+        stage('Build') {
             steps {
-                sh "mvn clean install"
+                // Invoke 'clean install' Maven targets
+                maven {
+                    goals 'clean install'
+                    mavenOpts '-Xmx1G'
+                    // Optional: specify the path to the Maven installation directory
+                    // mavenHome '/path/to/maven'
+                }
             }
         }
-        stage('Run in background') {
-    steps {
-        bat 'start /b java -jar myapp.jar > output.log 2>&1'
-    }
-}
+        stage('Test') {
+            steps {
+                // Invoke 'test' Maven target
+                maven {
+                    goals 'test'
+                }
+            }
+        }
+        stage('Package') {
+            steps {
+                // Invoke 'package' Maven target
+                maven {
+                    goals 'package'
+                }
+            }
+        }
+
         stage("Deploy to Tomcat") {
             steps {
                 sh "cp target/*.war /C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps"
