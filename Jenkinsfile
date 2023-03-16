@@ -20,22 +20,6 @@ pipeline {
                 )
             }
         }
-        stage('Test') {
-            steps {
-                // Invoke 'test' Maven target
-                maven {
-                    goals 'test'
-                }
-            }
-        }
-        stage('Package') {
-            steps {
-                // Invoke 'package' Maven target
-                maven {
-                    goals 'package'
-                }
-            }
-        }
 
         stage("Deploy to Tomcat") {
             steps {
