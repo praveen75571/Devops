@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh "mvn clean install"
                 withSonarQubeEnv('http://localhost:9000') {
-                    sh "mvn sonar:sonar
+                    sh " sonar:sonar
   -Dsonar.projectKey=Devops
   -Dsonar.host.url=http://localhost:9000
   -Dsonar.login=sqp_31ff1edf888fcbb666ebe99075ad7ec47a5b95d6"
