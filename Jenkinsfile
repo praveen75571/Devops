@@ -12,12 +12,15 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Invoke 'clean install' Maven targets
                 maven {
-                    goals 'clean', 'install'
-                    mavenOpts '-Xmx1G'
-                    // Optional: specify the path to the Maven installation directory
-                    // mavenHome '/path/to/maven'
+                    name: 'Maven',
+                    pom: 'pom.xml',
+                    goals: 'clean install',
+                    usePrivateRepository: false,
+                    //properties: [
+                      //  'username': 'myusername',
+                        //'password': 'mypassword'
+                    //]
                 }
             }
         }
