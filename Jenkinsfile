@@ -13,9 +13,6 @@ pipeline {
         stage("Build and Scan") {
             steps {
                 sh "mvn clean install"
-                withSonarQubeEnv('http://localhost:9000') {
-                    sh "mvn sonar:sonar"
-                }
             }
         }
         stage("Deploy to Tomcat") {
