@@ -10,10 +10,10 @@
 <body>
    Welcome ${name }
    <div class="header">
-  <h1 style= "padding: 57px;
-  text-align: top;
-  background: #1abc8c;
-  color: white;
+  <h1 style= "padding: 77px;
+  text-align: center;
+  background: #1abc9c;
+  color: Red;
   font-size: 30px;">Hello World</h1>
 </div>
 <input type="button" value="Submit" onclick="yourFunction();" style=" color:blackposition: fixed; right: 50%; "/>
