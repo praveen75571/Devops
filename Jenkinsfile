@@ -14,7 +14,7 @@ pipeline {
             steps {
                 // Invoke 'clean install' Maven targets
                 maven {
-                    goals 'clean install'
+                    goals 'clean', 'install'
                     mavenOpts '-Xmx1G'
                     // Optional: specify the path to the Maven installation directory
                     // mavenHome '/path/to/maven'
