@@ -10,8 +10,8 @@
 <body>
    Welcome ${name }
    <div class="header">
-  <h1 style= "padding: 89px;
-  text-align: bottom;
+  <h1 style= "padding: 57px;
+  text-align: top;
   background: #1abc9c;
   color: white;
   font-size: 30px;">Hello World</h1>
