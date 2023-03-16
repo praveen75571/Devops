@@ -1,18 +1,10 @@
 pipeline {
-    agent any
-	
-    tools {
-        maven 'Maven'
-        jdk 'JAVA'
-    }
-
-    environment {
-        MVN_HOME = tool 'Maven'
-        JAVA_HOME = tool 'JAVA'
+    agent {
+        label 'windows'
     }
 
     stages {
-        stage("Checkout") {
+        stage('Checkout') {
             steps {
                 git url: "https://github.com/balareddy2013/DevOps.git"
             }
@@ -20,7 +12,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat "${MVN_HOME}\bin\mvn clean install"
+                bat 'mvn clean package'
             }
         }
     }
