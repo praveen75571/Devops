@@ -20,7 +20,7 @@ pipeline {
         }
         stage("Deploy to Tomcat") {
             steps {
-                sh "cp target/*.war /C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps"
+                sh "cp target/*.war /C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps"
                 sh "/path/to/tomcat/bin/startup.sh"
             }
         }
