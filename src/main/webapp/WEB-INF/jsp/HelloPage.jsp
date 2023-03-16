@@ -13,8 +13,8 @@
   <h1 style= "padding: 77px;
   text-align: center;
   background: #1abc9c;
-  color: Red;
-  font-size: 30px;">Hello World</h1>
+  color: white;
+  font-size: 41px;">Hello World</h1>
 </div>
 <input type="button" value="Submit" onclick="yourFunction();" style=" color:blackposition: fixed; right: 50%; "/>
 </body>
