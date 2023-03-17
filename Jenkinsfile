@@ -17,7 +17,7 @@ pipeline {
              steps {
                  script {
                 // Deploy the .war file to Tomcat using the Tomcat Manager
-                     bat 'xcopy "target\\*.war" "C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\\" /Y'
+                     bat 'xcopy "target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\webapps\\" /Y'
                 }
                  }
              }
