@@ -22,7 +22,7 @@ pipeline {
                     def deployUrl = "${tomcatUrl}/deploy?path=/${warFileName}&update=true"
                     def warFile = file("target/${warFileName}")
                     
-                    sh "curl -u ${TOMCAT_USERNAME}:${TOMCAT_PASSWORD} --upload-file ${warFile} ${deployUrl}"
+                    bat "curl -u ${TOMCAT_USERNAME}:${TOMCAT_PASSWORD} --upload-file ${warFile} ${deployUrl}"
                 }
             }
     }
