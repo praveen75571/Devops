@@ -13,7 +13,7 @@ pipeline {
             }
         }
         
-        stage('Deploy to Tomcat") {
+        stage('Deploy to Tomcat') {
              steps {
                 // Deploy the .war file to Tomcat using the Tomcat Manager
                 withCredentials([usernamePassword(credentialsId: 'tomcat-credentials', usernameVariable: 'TOMCAT_USERNAME', passwordVariable: 'TOMCAT_PASSWORD')]) {
