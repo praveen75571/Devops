@@ -15,6 +15,7 @@ pipeline {
         
         stage('Deploy to Tomcat') {
              steps {
+                 script {
                 // Deploy the .war file to Tomcat using the Tomcat Manager
                 withCredentials([usernamePassword(credentialsId: 'tomcat-credentials', usernameVariable: 'TOMCAT_USERNAME', passwordVariable: 'TOMCAT_PASSWORD')]) {
                     def warFileName = '02-SpringMVC-0.0.1-SNAPSHOT.war'
@@ -24,7 +25,8 @@ pipeline {
                     
                     bat "curl -u ${TOMCAT_USERNAME}:${TOMCAT_PASSWORD} --upload-file ${warFile} ${deployUrl}"
                 }
-            }
+                 }
+             }
+        }
     }
-}
 }
