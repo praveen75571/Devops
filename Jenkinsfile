@@ -1,13 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('Git Checkout') {
+        stage('Git-Checkout') {
             steps {
                 git url: "https://github.com/balareddy2013/DevOps.git"
             }
         }
 
-        stage(' Maven Build') {
+        stage(' Maven-Build') {
             steps {
                 bat 'mvn clean package'
             }
