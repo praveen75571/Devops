@@ -15,7 +15,7 @@ pipeline {
         
         stage('sonar scan') {
             steps {
-                bat 'C:\\Users\\DELL\\Downloads\\sonarqube-9.9.0.65466\\sonarqube-9.9.0.65466\\bin\\windows-x86-64\\StartSonar.bat'
+                bat '"C:\\Users\\DELL\\Downloads\\sonarqube-9.9.0.65466\\sonarqube-9.9.0.65466\\bin\\windows-x86-64\\StartSonar.bat" sonar:sonar' 
             }
         }
         stage('Deploy to Tomcat') {
