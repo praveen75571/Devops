@@ -11,16 +11,7 @@ pipeline {
             steps {
                 bat 'mvn clean package'
             }
-        }
-        stage ('Initialize & SonarQube Scan') {
-            steps {
-                def scannerHome = tool 'sonarScanner';
-                withSonarQubeEnv('Sonar') {
-                    bat """
-                    ${scannerHome}/bin/sonar-runner.bat
-                    """
-                }
-            }        
+        }      
         stage('Deploy to Tomcat') {
              steps {
                  script {
@@ -31,4 +22,3 @@ pipeline {
              }
         }
     }
-}
