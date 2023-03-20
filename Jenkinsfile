@@ -12,6 +12,16 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+        stage ('Initialize & SonarQube Scan') {
+            steps {
+                def scannerHome = tool 'sonarScanner';
+                withSonarQubeEnv('Sonar') {
+                bat """
+                    ${scannerHome}/bin/sonar-runner.bat
+                    pip install -r requirements.txt
+                    """
+                }
+            }        
         stage('Deploy to Tomcat') {
              steps {
                  script {
