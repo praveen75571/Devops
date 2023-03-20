@@ -16,9 +16,8 @@ pipeline {
             steps {
                 def scannerHome = tool 'sonarScanner';
                 withSonarQubeEnv('Sonar') {
-                bat """
+                    bat """
                     ${scannerHome}/bin/sonar-runner.bat
-                    pip install -r requirements.txt
                     """
                 }
             }        
