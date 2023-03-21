@@ -11,7 +11,15 @@ pipeline {
             steps {
                 bat 'mvn clean package'
             }
-        }      
+        }
+        stage('SonarScanning') {
+            steps {
+                withSonarQubeEnv('SonarQubeServer') {
+                    bat 'mvn sonar:sonar'
+                }
+            }
+        }
+                
         stage('Deploy to Tomcat') {
              steps {
                  script {
